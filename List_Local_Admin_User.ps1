@@ -12,8 +12,6 @@
 
 #Script for CheckMK to List Local Admin Users
 
-Write-Output "<<<list_local_admin_users>>>"
-
 if((Get-WindowsFeature AD-Domain-Services).Installed){
 	return '3 "Local Administrator Group Member" - Seems this is a domain controller. No Local Admin Group Available.'
 }
