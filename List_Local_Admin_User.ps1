@@ -4,16 +4,20 @@
 ##
 ## This script gathers all members of the LocalAdmin group on Windows systems with the SID S-1-5-32-544
 ##
-## Version: 1.0.1
+## Version: 2.0.0
 ##
-## Date: 2023-07-21
+## Date: 2023-07-25
 ##
 ## Author: D. Lothmann
 
 #Script for CheckMK to List Local Admin Users
 
+$CMK_VERSION = "2.2.0"
+
+Write-Output -InputObject "<<<list_local_admin_user>>>"
+
 if((Get-WindowsFeature AD-Domain-Services).Installed){
-	return '3 "Local Administrator Group Member" - Seems this is a domain controller. No Local Admin Group Available.'
+	return '3'
 }
 
 if(Get-LocalGroupMember -SID S-1-5-32-544){
@@ -21,10 +25,10 @@ if(Get-LocalGroupMember -SID S-1-5-32-544){
 
 	$Member = [System.String]::Join(", ", $Member)
 
-	$output = '0 "Local Administrator Group Member" - ' + "$($Member)"
+	$output = $Member
 
 
 }else{
-	$output = '2 "Local Administrator Group Member" - No Group with SID S-1-5-32-544 found. Are you sure this is a windows?'
+	$output = '2'
 }
 	return $output
