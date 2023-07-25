@@ -1,7 +1,7 @@
 # List Local Admin User
 
 ![Static Badge](https://img.shields.io/badge/CheckMK-Plugin-gree)
-![Static Badge](https://img.shields.io/badge/Version-1.0.0-green)
+![Static Badge](https://img.shields.io/badge/Version-1.0.1-green)
 
 This Script is designed to provide a list of members of the local Administrator Group in Windows to CheckMK.
 
