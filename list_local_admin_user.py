@@ -4,9 +4,9 @@
 ##
 ## Agent based part of List Local Admin User Script
 ##
-## Version: 2.0.0
+## Version: 2.1.0
 ##
-## Date: 2023-07-25
+## Date: 2023-07-26
 ##
 ## Author: D. Lothmann
 
@@ -32,4 +32,5 @@ register.check_plugin(
     service_name="Local Administrator Group Member",
     discovery_function=discover_list_local_admin_user,
     check_function=check_list_local_admin_user,
+    check_ruleset=list_local_admin_user,
 )

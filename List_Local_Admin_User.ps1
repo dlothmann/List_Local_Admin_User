@@ -4,9 +4,9 @@
 ##
 ## This script gathers all members of the LocalAdmin group on Windows systems with the SID S-1-5-32-544
 ##
-## Version: 2.0.0
+## Version: 2.1.0
 ##
-## Date: 2023-07-25
+## Date: 2023-07-26
 ##
 ## Author: D. Lothmann
 
