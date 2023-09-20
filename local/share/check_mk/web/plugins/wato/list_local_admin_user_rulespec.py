@@ -34,6 +34,6 @@ if RulespecGroupMonitoringAgentsAgentPlugins is not None:
     rulespec_registry.register(
         HostRulespec(
             group=RulespecGroupMonitoringAgentsAgentPlugins,
-            name='list_local_admin_user',
+            name='agent_config:list_local_admin_user',
             valuespec=_valuespec_agent_config_list_local_admin_user,
         ))

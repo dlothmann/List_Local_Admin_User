@@ -9,6 +9,8 @@ If you have an enterprise edition please follow this [guide](https://docs.checkm
 
 If you have an raw edition please follow this [guide](https://docs.checkmk.com/latest/en/mkps.html#commandline) from the CheckMK manual to install the pakage.
 
+![Example Output](Example.png "Example Output")
+
 ---
 For further questions feel free to contact me.
 
