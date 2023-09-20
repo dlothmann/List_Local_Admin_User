@@ -1,0 +1,13 @@
+title: List Local Admin User
+agents: windows
+author: Dominik Lothmann
+license: GPL 2.0
+distribution: none
+description:
+ This check is designed to provide a list of members of the local Administrator group with SID S-1-5-32-544 in Windows.
+
+item:
+ The service name
+
+inventory:
+ A single check per windows server
