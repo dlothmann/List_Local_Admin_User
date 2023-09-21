@@ -1,3 +1,5 @@
+"""Check Evaluations"""
+
 ####
 ## List Local Admin Users
 ####
@@ -11,17 +13,20 @@
 ## Author: D. Lothmann
 
 #Script for CheckMK Agent to List Local Admin Users
-
-from .agent_based_api.v1 import *
 from itertools import chain
+from .agent_based_api.v1 import *
+
 
 def flatten_chain(matrix):
+    """Flatten the given array from powershell"""
     return list(chain.from_iterable(matrix))
 
 def discover_list_local_admin_user(section):
+    """Service Discovery"""
     yield Service(item="Local Admin User")
 
 def check_list_local_admin_user(item,section):
+    """Evaluate the result from the check script"""
 
     for line in section:
         if "3" in line[0]:
@@ -32,8 +37,8 @@ def check_list_local_admin_user(item,section):
             return
     arr = flatten_chain(section)
     out = ''
-    for s in arr:
-        out += s
+    for string in arr:
+        out += string
         out += " "
     yield Result(state=State.OK, summary=out)
 
