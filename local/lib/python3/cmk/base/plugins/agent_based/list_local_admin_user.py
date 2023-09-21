@@ -25,7 +25,7 @@ def discover_list_local_admin_user(section):
     """Service Discovery"""
     yield Service(item="Local Admin User")
 
-def check_list_local_admin_user(item,section):
+def check_list_local_admin_user(item, section):
     """Evaluate the result from the check script"""
 
     crit = "Seems this is a Domain Controller. No Local Admin Group Available."
@@ -47,6 +47,7 @@ def check_list_local_admin_user(item,section):
     yield Result(state=State.OK, summary=out)
 
 register.check_plugin(
+
     name="list_local_admin_user",
     service_name="%s",
     discovery_function=discover_list_local_admin_user,
