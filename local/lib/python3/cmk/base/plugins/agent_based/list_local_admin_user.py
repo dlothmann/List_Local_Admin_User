@@ -39,6 +39,7 @@ def check_list_local_admin_user(item, section):
             yield Result(state=State.Warn, summary=warn)
             return
 
+
     arr = flatten_chain(section)
     out = ''
     for string in arr:
@@ -46,6 +47,7 @@ def check_list_local_admin_user(item, section):
         out += " "
 
     yield Result(state=State.OK, summary=out)
+
 
 register.check_plugin(
 
