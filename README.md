@@ -1,5 +1,7 @@
 # List Local Admin User
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7c7ca93d8f6946a58693600385d1e510)](https://app.codacy.com/gh/dlothmann/List_Local_Admin_User?utm_source=github.com&utm_medium=referral&utm_content=dlothmann/List_Local_Admin_User&utm_campaign=Badge_Grade)
+
 ![Static Badge](https://img.shields.io/badge/CheckMK-Plugin-gree)
 ![Static Badge](https://img.shields.io/badge/Version-2.0.0-green)
 
