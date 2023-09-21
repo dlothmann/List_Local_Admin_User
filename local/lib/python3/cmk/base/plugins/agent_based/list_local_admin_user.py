@@ -28,18 +28,22 @@ def discover_list_local_admin_user(section):
 def check_list_local_admin_user(item,section):
     """Evaluate the result from the check script"""
 
+    crit = "Seems this is a Domain Controller. No Local Admin Group Available."
+    warn = "No Group with SID S-1-5-32-544 found. Are you sure this is a windows system?"
+
     for line in section:
         if "3" in line[0]:
-            yield Result(state=State.CRIT, summary="Seems this is a Domain Controller. No Local Admin Group Available.")
+            yield Result(state=State.CRIT, summary=crit)
             return
         if "2" in line[0]:
-            yield Result(state=State.Warn, summary="No Group with SID S-1-5-32-544 found. Are you sure this is a windows system?")
+            yield Result(state=State.Warn, summary=warn)
             return
     arr = flatten_chain(section)
     out = ''
     for string in arr:
         out += string
         out += " "
+
     yield Result(state=State.OK, summary=out)
 
 register.check_plugin(

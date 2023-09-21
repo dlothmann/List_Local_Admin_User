@@ -11,12 +11,10 @@ from cmk.gui.plugins.wato import (
     rulespec_registry,
 )
 
-try:
-    from cmk.gui.cee.plugins.wato.agent_bakery.rulespecs.utils import (
-        RulespecGroupMonitoringAgentsAgentPlugins
+
+from cmk.gui.cee.plugins.wato.agent_bakery.rulespecs.utils import (
+    RulespecGroupMonitoringAgentsAgentPlugins
     )
-except Exception:
-    RulespecGroupMonitoringAgentsAgentPlugins = None
 
 
 def _valuespec_agent_config_list_local_admin_user():
@@ -31,10 +29,10 @@ def _valuespec_agent_config_list_local_admin_user():
     )
 
 
-if RulespecGroupMonitoringAgentsAgentPlugins is not None:
-    rulespec_registry.register(
-        HostRulespec(
-            group=RulespecGroupMonitoringAgentsAgentPlugins,
-            name='agent_config:list_local_admin_user',
-            valuespec=_valuespec_agent_config_list_local_admin_user,
-        ))
+
+rulespec_registry.register(
+    HostRulespec(
+        group=RulespecGroupMonitoringAgentsAgentPlugins,
+        name='agent_config:list_local_admin_user',
+        valuespec=_valuespec_agent_config_list_local_admin_user,
+    ))
