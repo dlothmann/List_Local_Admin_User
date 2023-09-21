@@ -14,7 +14,7 @@
 
 #Script for CheckMK Agent to List Local Admin Users
 from itertools import chain
-from .agent_based_api.v1 import *
+from .agent_based_api.v1 import Service, State, Result, register
 
 
 def flatten_chain(matrix):
@@ -38,6 +38,7 @@ def check_list_local_admin_user(item, section):
         if "2" in line[0]:
             yield Result(state=State.Warn, summary=warn)
             return
+
     arr = flatten_chain(section)
     out = ''
     for string in arr:
